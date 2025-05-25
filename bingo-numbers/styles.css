@@ -1,0 +1,124 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.actions_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Botones */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.input_find {
+    width: 178px;
+    margin: 0 auto;
+    height: 26px;
+    border: 1px solid #c4c4c4;
+    border-radius: 4px;
+    padding: 5px;
+
+}
+
+/* Número seleccionado */
+#number_selected {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Lista de números generados */
+#old_numbers {
+    list-style-type: none;
+    padding: 10px;
+    max-width: 100%;
+    max-height: 337px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    /* Configuración para columnas */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: auto; /* Permitir scroll si es necesario */
+    gap: 10px; /* Espaciado entre elementos */
+}
+
+#old_numbers li {
+    padding: 8px;
+    font-size: 18px;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    width: 50px; /* Ancho fijo para las columnas */
+    box-sizing: border-box;
+}
+
+/* Resaltado temporal */
+#old_numbers li.highlight {
+    background-color: yellow;
+    transition: background-color 0.5s ease;
+}
+
+.spin-wheel span {
+    color: #fff;
+}
+
+/* Spin wheel styles */
+.spin-wheel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 20px 0;
+}
+
+.spin-wheel {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #5459AC 0 72deg,
+        #F564A9 72deg 144deg,
+        #129990 144deg 216deg,
+        #FF9B45 216deg 288deg,
+        #222222 288deg 360deg
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    position: relative;
+    transition: transform 1s cubic-bezier(0.2,-0.55,.27,1.30);
+}
+
+.spin-wheel span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 19px #00000055;
+    z-index: 2;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Bingo</title>
+</head>
+<body>
+    <div class="actions_container">
+        <div>
+            <button id="get_number">Go!</button>
+            <button id="restart">Start again</button>
+        </div>
+        <input type="text" id="find_item" placeholder="Find number" class="input_find">
+    </div>
+    <!-- Spin wheel para mostrar el número seleccionado -->
+    <div class="spin-wheel-container">
+        <div id="spin_wheel" class="spin-wheel">
+            <span id="number_selected">0</span>
+        </div>
+    </div>
+    <ul id="old_numbers"></ul>
+    <script src="app.js"></script>
+</body>
+</html>
