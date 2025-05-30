@@ -61,7 +61,9 @@ function generateBingoNumber() {
     listItem.textContent = bingoNumber;
     listItem.style.color = colorValidation;
     listItem.style.fontWeight = 600;
-    oldNumbersList.appendChild(listItem);
+    setTimeout(() => {
+      oldNumbersList.appendChild(listItem);
+    }, 600);
   }
 }
 
