@@ -122,3 +122,61 @@ button:hover {
     text-shadow: 1px 1px 19px #00000055;
     z-index: 2;
 }
+
+/* INPUTS STYLES */
+.filters {
+    margin: 10px 0 0;
+}
+
+.checkbox.style-c {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkbox.style-c input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox.style-c input:checked ~ .checkbox__checkmark {
+  background-color: #007bff;
+}
+.checkbox.style-c input:checked ~ .checkbox__checkmark:after {
+  opacity: 1;
+}
+
+.checkbox.style-c .checkbox__checkmark {
+  position: absolute;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  transition: background-color 0.25s ease;
+  border-radius: 4px;
+  border: 1px solid #323232;
+}
+.checkbox.style-c .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #eee;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.checkbox.style-c .checkbox__body {
+  color: #333;
+  line-height: 1.4;
+  font-size: 16px;
+}

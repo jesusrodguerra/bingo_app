@@ -4,6 +4,7 @@ const restartButton = document.getElementById("restart");
 const numberSelected = document.getElementById("number_selected");
 const oldNumbersList = document.getElementById("old_numbers");
 const findItemInput = document.getElementById("find_item");
+const checkboxes = document.querySelectorAll(".filter");
 
 // Letras de Bingo y números generados
 const bingoLetters = ["B", "I", "N", "G", "O"];
@@ -65,6 +66,8 @@ function generateBingoNumber() {
       oldNumbersList.appendChild(listItem);
     }, 600);
   }
+
+  console.log(checkbox)
 }
 
 // Función para resaltar un elemento de la lista
@@ -94,7 +97,29 @@ function findItem() {
   });
 }
 
+function filterItems() {
+  const selectedLetters = Array.from(checkboxes)
+    .filter((cb) => cb.checked)
+    .map((cb) => cb.name.replace("type_", "").toUpperCase());
+
+  oldNumbersList.querySelectorAll("li").forEach((item) => {
+    // Si no hay filtros activos, muestra todos
+    if (selectedLetters.length === 0) {
+      item.style.display = "block";
+      return;
+    }
+    // Muestra solo los que empiezan con la letra seleccionada
+    const itemLetter = item.textContent.charAt(0).toUpperCase();
+    if (selectedLetters.includes(itemLetter)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
 // Event listeners
 getNumberButton.addEventListener("click", generateBingoNumber);
 restartButton.addEventListener("click", restartGame);
 findItemInput.addEventListener("input", findItem);
+checkboxes.forEach((cb) => cb.addEventListener("input", filterItems));
